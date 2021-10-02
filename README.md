@@ -7,12 +7,14 @@ Then separated the X and y from the dataset and used testtrainsplit provided by 
 Then used different models like NaiveBayes model, Neural Network model, Logistic Regression Model, KNN model and TreeClassifier model and got the best accuracy by Logisitic Regression Model.
 
 **NaiveBayes model**
+
 model = GaussianNB()
 model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 y_pred = model.predict(X_test)     //61 percent
 
 **Neural Network model**
+
 model = Sequential()
 model.add(Dense(input_shape=(1500,), units = 64, activation = 'relu'))
 model.add(Dense(units = 32, activation = 'relu'))
@@ -49,6 +51,7 @@ y_pred_nn
 accuracy_score(y_test, y_pred_nn)  //47 percent
 
 **KNN**
+
 classifier= KNeighborsClassifier(n_neighbors=3, metric='minkowski', p=2 )  
 classifier.fit(X_train, y_train)  
 y_pred_knn = classifier.predict(X_test)
@@ -56,6 +59,7 @@ accuracy_score(y_test, y_pred_knn)  //61 percent
 
 
 **Logistic Regression**
+
 classifier= LogisticRegression(random_state=49)  
 classifier.fit(X_train, y_train) 
 y_pred_log = classifier.predict(X_test)
@@ -63,6 +67,7 @@ accuracy_score(y_test,y_pred_log)  //74 percent
 
 
 **Decision tree classifier**
+
 classifier= DecisionTreeClassifier(criterion='entropy', random_state=49)  
 classifier.fit(X_train, y_train)  
 y_pred_tree = classifier.predict(X_test)
